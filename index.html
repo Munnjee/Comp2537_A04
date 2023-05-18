@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMP 2537 Assignment 4</title>
+
+  <!-- Import axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- Import jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Import Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Import Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="console">
+    <div id="form" class="btn-group-toggle m-3 justify-content-center" data-toggle="buttons">
+      <label class="btn btn-danger active" for="easyMode" id="easy">
+        <input type="radio" value="easy" name="difficulty" autocomplete="off" checked> Easy
+      </label>
+      <label class="btn btn-danger" for="normalMode" id="normal">
+        <input type="radio" value="normal" name="difficulty" autocomplete="off"> Normal
+      </label>
+      <label class="btn btn-danger" for="hardMode" id="hard">
+        <input type="radio" value="hard" name="difficulty" autocomplete="off"> Hard
+      </label>
+    </div>
+
+
+    <section id="info" class="dashboard" style="display: none">
+      <p>Total Number of Pairs: <span id="total">3</span></p>
+      <p>Matched: <span id="matches"></span></p>
+      <p>Pairs Left: <span id="left"></span></p>
+      <p>Number of Clicks: <span id="clicks"></span></p>
+      <p>Number of Moves: <span id="moves"></span></p>
+      <p>You got <span id="time" style="color: rgb(218, 0, 0);"></span> seconds remaining.</p>
+      <button id="powerUp" class="btn btn-success m-2">Power Up</button>
+    </section>
+    <button class="btn btn-secondary m-1" id="reset">Reset</button>
+    <button class="btn btn-secondary m-1" id="start">Start</button>
+  </div>
+
+  <div id="gameGrid"></div>
+  <div class="theme-btn">
+    <section id="themes" class="btn-group btn-group-toggle m-3 justify-content-center">
+      <button class="btn btn-dark" id="darkMode">Dark Mode</button>
+      <button class="btn btn-light" id="lightMode">Light Mode</button>
+    </section>
+  </div>
+
+  <div class="modal" style="display: none">
+    <div class="modal-inner">
+      <h3>Well done!</h3>
+      <p class="modal-text">
+        You solved it in <span id="final-time" style="color: rgb(218, 0, 0);"></span> seconds with
+        <span id="final-moves" style="color: rgb(218, 0, 0);"></span> moves
+      </p>
+      <a href="./index.html" id="replay"> Play Again!</a>
+    </div>
+  </div>
+
+  <div class="modal-timeout" style="display: none">
+    <div class="modal-inner">
+      <h3>Out of Time!</h3>
+      <p class="modal-text">
+        Better luck next time!
+      </p>
+      <a href="./index.html" id="replay"> Try Again!</a>
+    </div>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>

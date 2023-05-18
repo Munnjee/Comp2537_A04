@@ -1,0 +1,102 @@
+body {
+  margin: 0px;
+}
+
+.console {
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+
+.dashboard {
+  font-size: 16px;
+  width: fit-content;
+  background-color: rgba(128, 128, 128, 0.341);
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.dashboard p {
+  margin-bottom: 0 !important;
+}
+
+.theme-btn {
+  text-align: center;
+}
+
+#gameGrid {
+  box-sizing: content-box;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#game_grid a {
+  font-size: 30pt;
+}
+
+/* Card CSS */
+.pokeCard {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transition: transform 0.5s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+img {
+  width: 100%;
+  border-style: none;
+}
+
+.front_face,
+.back_face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.front_face {
+  transform: rotateY(180deg);
+}
+
+/* Modal CSS */
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 20%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inner {
+  background: #f7f7f7;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 40px;
+  width: 70%;
+  max-width: 800px;
+  border-radius: 20px;
+}
+
+.modal-timeout {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 20%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
